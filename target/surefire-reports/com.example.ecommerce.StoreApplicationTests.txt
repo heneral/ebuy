@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.ecommerce.StoreApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.547 s -- in com.example.ecommerce.StoreApplicationTests

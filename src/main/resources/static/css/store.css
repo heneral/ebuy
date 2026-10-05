@@ -1,0 +1,319 @@
+:root {
+    --store-ink: #202923;
+    --store-muted: #69736c;
+    --store-green: #244b3c;
+    --store-green-dark: #19392e;
+    --store-paper: #f7f7f3;
+    --store-line: #e5e8e1;
+    --store-radius: 1rem;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--store-paper);
+    color: var(--store-ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.site-header {
+    position: sticky;
+    z-index: 1030;
+    top: 0;
+    border-bottom: 1px solid rgb(32 41 35 / 7%);
+    background: rgb(255 255 255 / 94%);
+    box-shadow: 0 5px 20px rgb(32 41 35 / 3%);
+    backdrop-filter: blur(14px);
+}
+
+.site-header .container {
+    min-height: 76px;
+}
+
+.navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-right: 2.25rem;
+    color: var(--store-ink);
+    font-size: 1.25rem;
+    font-weight: 750;
+    letter-spacing: -0.05em;
+}
+
+.navbar-brand:hover {
+    color: var(--store-green);
+}
+
+.brand-mark {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border-radius: 0.7rem;
+    background: var(--store-green);
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 750;
+    letter-spacing: -0.08em;
+}
+
+.site-header .navbar-nav {
+    gap: 0.25rem;
+}
+
+.site-header .nav-link {
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.65rem;
+    color: #566159;
+    font-size: 0.93rem;
+    font-weight: 550;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link:focus-visible {
+    background: #f0f3ef;
+    color: var(--store-green-dark);
+}
+
+.account-nav {
+    gap: 0.5rem !important;
+}
+
+.account-nav .navbar-text {
+    margin-right: 0.25rem;
+    color: var(--store-muted);
+    font-size: 0.9rem;
+}
+
+.btn-brand,
+.btn-dark {
+    border-color: var(--store-green);
+    background-color: var(--store-green);
+    color: #fff;
+}
+
+.btn-brand:hover,
+.btn-dark:hover {
+    border-color: var(--store-green-dark);
+    background-color: var(--store-green-dark);
+    color: #fff;
+}
+
+.btn-outline-brand,
+.btn-outline-dark {
+    border-color: #cbd5cd;
+    color: var(--store-green);
+}
+
+.btn-outline-brand:hover,
+.btn-outline-dark:hover {
+    border-color: var(--store-green);
+    background: var(--store-green);
+    color: #fff;
+}
+
+main.container {
+    padding-top: 3rem !important;
+    padding-bottom: 4rem !important;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e2e9df;
+    background:
+        radial-gradient(ellipse at 88% 15%, rgb(255 255 255 / 80%), transparent 35%),
+        linear-gradient(120deg, #e5eee5 0%, #f2efe3 100%);
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero p:first-child {
+    color: var(--store-green);
+    letter-spacing: 0.14em;
+}
+
+.hero .display-4 {
+    max-width: 700px;
+    color: var(--store-ink);
+    letter-spacing: -0.055em;
+    line-height: 1.03;
+}
+
+.hero .lead {
+    color: #59665d;
+    line-height: 1.7;
+}
+
+.product-card {
+    overflow: hidden;
+    border: 1px solid var(--store-line);
+    border-radius: var(--store-radius);
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(32 41 35 / 4%);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgb(32 41 35 / 9%);
+}
+
+.product-image,
+.detail-image {
+    display: flex;
+    min-height: 230px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(145deg, #f2f3ee, #e9ede7);
+}
+
+.product-image img,
+.detail-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    transition: transform 250ms ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.035);
+}
+
+.image-placeholder {
+    color: #8a958b;
+    font-size: 1.5rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+}
+
+.product-card .card-body {
+    padding: 1.25rem;
+}
+
+.product-card h2,
+.product-card h3 {
+    letter-spacing: -0.025em;
+}
+
+.detail-image {
+    min-height: 400px;
+    border: 1px solid var(--store-line);
+    border-radius: var(--store-radius);
+}
+
+.detail-image img {
+    max-height: 520px;
+}
+
+.form-card {
+    max-width: 620px;
+    padding: 2rem;
+    border: 1px solid var(--store-line);
+    border-radius: var(--store-radius);
+    background: #fff;
+    box-shadow: 0 12px 32px rgb(32 41 35 / 5%);
+}
+
+.form-control,
+.form-select {
+    min-height: 44px;
+    border-color: #dce2dc;
+    border-radius: 0.65rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #789483;
+    box-shadow: 0 0 0 0.2rem rgb(36 75 60 / 13%);
+}
+
+.alert-stack {
+    padding-top: 1.25rem;
+}
+
+.alert {
+    border: 0;
+    border-radius: 0.8rem;
+    box-shadow: 0 5px 18px rgb(32 41 35 / 4%);
+}
+
+.table {
+    --bs-table-bg: #fff;
+}
+
+.pagination {
+    gap: 0.3rem;
+}
+
+.page-link {
+    border-color: var(--store-line);
+    border-radius: 0.55rem;
+    color: var(--store-green);
+}
+
+.page-item.active .page-link {
+    border-color: var(--store-green);
+    background: var(--store-green);
+}
+
+:focus-visible {
+    outline: 3px solid rgb(36 75 60 / 45%);
+    outline-offset: 2px;
+}
+
+@media (max-width: 991.98px) {
+    .site-header .container {
+        min-height: 66px;
+    }
+
+    .site-header .navbar-collapse {
+        padding: 0.75rem 0 1rem;
+    }
+
+    .account-nav {
+        align-items: flex-start !important;
+        margin-top: 0.5rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--store-line);
+    }
+}
+
+@media (max-width: 575.98px) {
+    main.container {
+        padding-top: 1.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+
+    .hero {
+        padding: 1.5rem !important;
+        border-radius: 1rem !important;
+    }
+
+    .hero .display-4 {
+        font-size: clamp(2.5rem, 12vw, 3.5rem);
+    }
+
+    .form-card {
+        padding: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

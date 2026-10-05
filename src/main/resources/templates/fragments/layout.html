@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+<nav th:fragment="header" class="navbar navbar-expand-lg site-header">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/}" aria-label="ebuy home">
+            <span class="brand-mark" aria-hidden="true">e</span>
+            <span>ebuy</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <div class="navbar-nav me-auto">
+                <a class="nav-link" th:href="@{/products}">Shop</a>
+                <a class="nav-link" th:href="@{/cart}">Cart</a>
+                <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/orders}">My orders</a>
+                <a class="nav-link" sec:authorize="hasRole('ADMIN')" th:href="@{/admin/products}">Manage products</a>
+                <a class="nav-link" sec:authorize="hasRole('ADMIN')" th:href="@{/admin/orders}">Manage orders</a>
+            </div>
+            <div class="navbar-nav account-nav align-items-lg-center">
+                <span class="navbar-text" sec:authorize="isAuthenticated()">
+                    Hi, <span sec:authentication="name">user</span>
+                </span>
+                <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}">Sign in</a>
+                <a class="btn btn-brand btn-sm" sec:authorize="isAnonymous()" th:href="@{/register}">Create account</a>
+                <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post" class="d-inline">
+                    <button class="btn btn-outline-brand btn-sm" type="submit">Sign out</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+<div th:fragment="alerts" class="container alert-stack">
+    <div th:if="${successMessage}" class="alert alert-success alert-dismissible fade show" role="alert">
+        <span th:text="${successMessage}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div th:if="${errorMessage}" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <span th:text="${errorMessage}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
+</body>
+</html>
