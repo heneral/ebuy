@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your cart | ebuy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/store.css}" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{fragments/layout :: header}"></div>
+<div th:replace="~{fragments/layout :: alerts}"></div>
+<main class="container page-shell">
+    <header class="page-heading">
+        <p class="eyebrow mb-2">Almost yours</p>
+        <h1 class="display-6 fw-bold mb-2">Your bag</h1>
+        <p class="text-secondary mb-0">Take a moment to review your finds.</p>
+    </header>
+    <div th:if="${#lists.isEmpty(lines)}" class="empty-state">
+        <span class="empty-state-mark" aria-hidden="true">▱</span>
+        <h2 class="h4">Your bag is taking a little break</h2>
+        <p class="text-secondary mb-3">Find something useful, lovely, or a bit of both.</p>
+        <a th:href="@{/products}" class="btn btn-dark">Explore the collection</a>
+    </div>
+    <div th:unless="${#lists.isEmpty(lines)}">
+        <div class="table-responsive surface-card cart-table">
+            <table class="table align-middle mb-0">
+                <thead><tr><th>Item</th><th>Price</th><th style="width: 180px">Quantity</th><th>Subtotal</th><th></th></tr></thead>
+                <tbody>
+                <tr th:each="line : ${lines}">
+                    <td><a class="link-dark fw-semibold" th:href="@{/products/{id}(id=${line.product.id})}"
+                           th:text="${line.product.name}">Product</a></td>
+                    <td th:text="|$${#numbers.formatDecimal(line.product.price, 1, 2)}|">$0.00</td>
+                    <td>
+                        <form th:action="@{/cart/update/{id}(id=${line.product.id})}" method="post" class="input-group input-group-sm">
+                            <input class="form-control" type="number" name="quantity" min="0"
+                                   th:max="${line.product.stockQuantity}" th:value="${line.quantity}" aria-label="Quantity">
+                            <button class="btn btn-outline-dark">Update</button>
+                        </form>
+                    </td>
+                    <td th:text="|$${#numbers.formatDecimal(line.subtotal, 1, 2)}|">$0.00</td>
+                    <td>
+                        <form th:action="@{/cart/remove/{id}(id=${line.product.id})}" method="post">
+                            <button class="btn btn-link text-danger p-0" aria-label="Remove item">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cart-summary">
+            <a th:href="@{/products}" class="text-link">← Keep browsing</a>
+            <div class="cart-summary-total">
+                <span class="text-secondary">Order total</span>
+                <strong th:text="|$${#numbers.formatDecimal(total, 1, 2)}|">$0.00</strong>
+            </div>
+            <a th:href="@{/checkout}" class="btn btn-dark btn-lg">Continue to checkout <span aria-hidden="true">→</span></a>
+        </div>
+    </div>
+</main>
+<div th:replace="~{fragments/layout :: footer}"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

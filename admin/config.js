@@ -1,0 +1,1 @@
+window.EBUY_API = 'http://localhost:4000';

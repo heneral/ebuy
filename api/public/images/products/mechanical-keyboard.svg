@@ -1,0 +1,28 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-150 0 900 600' role='img' aria-label='Mechanical Keyboard'><defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#e6ebf0'/><stop offset='1' stop-color='#cdd6df'/></linearGradient></defs><rect x='-150' width='900' height='600' fill='url(#bg)'/><ellipse cx='300' cy='500' rx='170' ry='22' fill='#000' opacity='.12'/>
+<rect x='80' y='250' width='440' height='220' rx='24' fill='#30343b'/>
+<rect x='105' y='280' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='155' y='280' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='205' y='280' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='255' y='280' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='305' y='280' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='355' y='280' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='405' y='280' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='455' y='280' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='105' y='324' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='155' y='324' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='205' y='324' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='255' y='324' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='305' y='324' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='355' y='324' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='405' y='324' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='455' y='324' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='105' y='368' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='155' y='368' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='205' y='368' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='255' y='368' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='305' y='368' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='355' y='368' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='405' y='368' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='455' y='368' width='40' height='34' rx='7' fill='#e9edf2'/>
+<rect x='170' y='412' width='260' height='34' rx='7' fill='#e9edf2'/>
+<rect x='105' y='412' width='55' height='34' rx='7' fill='#e07a5f'/><rect x='440' y='412' width='55' height='34' rx='7' fill='#e07a5f'/></svg>

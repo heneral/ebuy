@@ -1,0 +1,4 @@
+node_modules/
+api/data/*.db*
+api/public/images/uploads/
+data/*.trace.db

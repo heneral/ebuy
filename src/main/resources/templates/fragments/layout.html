@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <body>
-<nav th:fragment="header" class="navbar navbar-expand-lg site-header">
+<nav th:fragment="header" class="navbar navbar-expand-lg navbar-light site-header">
     <div class="container">
         <a class="navbar-brand" th:href="@{/}" aria-label="ebuy home">
             <span class="brand-mark" aria-hidden="true">e</span>
@@ -42,5 +42,26 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 </div>
+<footer th:fragment="footer" class="site-footer">
+    <div class="container footer-main">
+        <div class="footer-brand">
+            <a class="navbar-brand" th:href="@{/}">
+                <span class="brand-mark" aria-hidden="true">e</span>
+                <span>ebuy</span>
+            </a>
+            <p>Useful, considered pieces for home and everyday.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+            <a th:href="@{/products}">Shop</a>
+            <a th:href="@{/cart}">Your cart</a>
+            <a th:href="@{/orders}" sec:authorize="isAuthenticated()">Your orders</a>
+            <a th:href="@{/login}" sec:authorize="isAnonymous()">Sign in</a>
+        </nav>
+    </div>
+    <div class="container footer-bottom">
+        <span th:text="|© ${#dates.year(#dates.createNow())} ebuy|">© ebuy</span>
+        <span>Thoughtfully picked. Made for everyday.</span>
+    </div>
+</footer>
 </body>
 </html>
